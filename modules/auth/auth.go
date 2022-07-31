@@ -14,9 +14,10 @@ var (
 )
 
 func init() {
+	log.SetFlags(log.Lshortfile | log.Ltime)
 	if signingKey, signingKeyEnvExist = os.LookupEnv("JWT_SIGNING_KEY"); !signingKeyEnvExist {
 		log.Println("JWT_SIGNING_KEY env variable is missing")
-		panic("JWT_SIGNING_KEY env variable is missing")
+		// panic("JWT_SIGNING_KEY env variable is missing")
 	}
 }
 
